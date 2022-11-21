@@ -1,0 +1,56 @@
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                Cedula
+            </th>
+            <th>
+                Telefono
+            </th>
+            <th>
+                Correo
+            </th>
+            <th>
+                Rol
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoRegistro">
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.apellido}}
+            </td>
+            <td>
+                {{p.cedula}}
+            </td>
+            <td>
+                {{p.telefono}}
+            </td>
+            <td>
+                {{p.correo}}
+            </td>
+            <td>
+                {{p.rol}}
+            </td>
+            <td>
+                <a routerLink="/administrador/editarUsuario/{{p.id}}" class="btn">Editar</a>
+            </td>
+            <td>
+                <button class="btn" (click)="eliminarUsuario(p.id)">Eliminar</button>
+            </td>
+
+        </tr>
+    </tbody>
+
+</table>
+
+<a routerLink="/administrador/crearUsuario" class="btn">Nuevo Usuario</a>

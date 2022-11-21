@@ -1,0 +1,34 @@
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Departamento
+            </th>
+            <th>
+                Ciudad
+            </th>
+            <th>
+                Direccion
+            </th>
+            <th>
+                Telefono
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of listadoRegistro">
+            <td>
+                {{s.departamento}}
+            </td>
+            <td>
+                {{s.ciudad}}
+            </td>
+            <td>
+                {{s.direccion}}
+            </td>
+            <td>
+                {{s.telefono}}
+            </td>
+        </tr>
+    </tbody>
+</table>

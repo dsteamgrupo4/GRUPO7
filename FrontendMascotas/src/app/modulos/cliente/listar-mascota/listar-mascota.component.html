@@ -1,0 +1,46 @@
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Foto
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Especie
+            </th>            
+            <th>
+                Plan
+            </th>
+            <th>
+                Estado
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of listadoRegistro">
+            <td>
+                {{m.foto}}
+            </td>
+            <td>
+                {{m.nombre}}
+            </td>
+            <td>
+                {{m.especie}}
+            </td>            
+            <td>
+                {{m.planId}}
+            </td>
+            <td>
+                {{m.estado}}
+            </td>
+            <td>
+                <a routerLink="/cliente/editarMascota/{{m.id}}" class="btn">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<a routerLink="/cliente/registrarMascota" class="btn">Nueva Mascota</a>

@@ -1,0 +1,38 @@
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Precio
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoRegistros">
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.descripcion}}
+            </td>
+            <td>
+                {{p.precio}}
+            </td>
+            <td>
+                <a routerLink="/administrador/editarPlan/{{p.id}}" class="btn">Editar</a>
+            </td>
+            <td>
+                <button class="btn" (click)="eliminarPlan(p.id)">Eliminar</button>
+            </td>
+
+        </tr>
+    </tbody>
+
+</table>
+
+<a routerLink="/administrador/crearPlan" class="btn">Nuevo Plan</a>

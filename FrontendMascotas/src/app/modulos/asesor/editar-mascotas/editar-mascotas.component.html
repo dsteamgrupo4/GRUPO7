@@ -1,0 +1,61 @@
+<body>
+    <div class="formulario">
+        <div class="row">
+            <form [formGroup]="fgValidator" (ngSubmit)="EditarMascota()" method="POST" class="col s12">
+                <input type="hidden" formControlName="id">
+                <h3>Editar Mascota</h3>
+                <div class="row">
+                    <div class="input-field col s5">
+                        <input  formControlName="nombre" type="text" name="nombre" >
+                        <label for="nombre" class="active">Nombre</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <select formControlName="especie" type="text" name="especie" class="browser-default" aria-label="especie" >
+                            <option value="" disabled selected>Elija Especie</option>
+                            <option value="Ave">Aves</option>
+                            <option value="Gato">Gatos</option>
+                            <option value="Perro">Perros</option>
+                            <option value="Conejo">Conejos</option>
+                            <option value="Serpiente">Serpientes</option>
+                            <option value="Tortuga">Tortugas</option>
+                        </select>
+                        <label for="especie" class="active">Especie</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s5">
+                        <input formControlName="foto" type="text" name="foto" class="validate" >
+                        <label for="foto" class="active">Url Foto</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <select formControlName="planId" type="text" name="planId" class="browser-default" aria-label="planId" >
+                            <option value="" disabled selected>Elija Plan</option>
+                            <option value="Bronce">Bronce</option>
+                            <option value="Plata">Plata</option>
+                            <option value="Oro">Oro</option>
+                            <option value="Diamante">Diamante</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8">
+                        <textarea formControlName="comentario" type="text" name="comentario" class="materialize-textarea" ></textarea>
+                        <label for="comentario" class="active">Comentario</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s3">
+                        <select formControlName="estado" type="text" name="estado" class="browser-default" aria-label="estado" >
+                            <option value="" disabled selected>Elija Plan</option>
+                            <option value="Aceptado">Aceptado</option>
+                            <option value="Rechazado">Rechazado</option>
+                        </select>
+                        <label for="estado" class="active">Aprobar o rechazar</label>
+                    </div>
+                </div>
+                <button [disabled]="!fgValidator.valid" class="btn waves-effect waves-light" type="submit" name="action">Editar<i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
